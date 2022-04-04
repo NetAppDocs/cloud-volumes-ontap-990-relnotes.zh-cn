@@ -1,0 +1,16 @@
+---
+sidebar: sidebar 
+permalink: reference-limitations-gcp.html 
+keywords: limitations, google cloud platform, gcp 
+summary: 已知限制确定了本产品版本不支持的平台、设备或功能、或者这些平台、设备或功能无法与产品正确交互操作。仔细审查这些限制。 
+---
+= Google Cloud 中的已知限制
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 Google 云平台中， Cloud Volumes ONTAP 没有特定的已知限制。请参见 link:reference-limitations.html["所有云提供商的限制"]。

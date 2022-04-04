@@ -1,0 +1,134 @@
+---
+sidebar: sidebar 
+permalink: reference-new.html 
+keywords: 'what"s new, new, features, release notes, enhancements' 
+summary: Cloud Volumes ONTAP 9.9.0 提供了几项新功能和增强功能。 
+---
+= Cloud Volumes ONTAP 9.9.0 中的新增功能
+:hardbreaks:
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cloud Volumes ONTAP 9.9.0 提供了几项新功能和增强功能。
+
+最新版本的 Cloud Manager 还引入了其他功能和增强功能。请参见 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["Cloud Manager 发行说明"^] 了解详细信息。
+
+
+
+== 最新更新（ 2021 年 4 月 21 日）
+
+现在，在 AWS 中，您最多可以配置 24 个 Storage VM （ SVM ）以进行灾难恢复（ DR ）。以前的限制是用于灾难恢复的 12 个 Storage VM 。
+
+link:reference-limits-aws.html#storage-vm-limits["了解有关 Storage VM 限制的更多信息"]。
+
+
+
+== 最新更新（ 2021 年 4 月 12 日）
+
+自 Cloud Volumes ONTAP 9.9.0 发布以来，已进行了一些更新。
+
+* AWS 更新 *
+
+* 从 9.7 版开始， Cloud Volumes ONTAP 现在支持通用 SSD （ GP3 ）磁盘。GP3 磁盘是成本最低的 SSD ，可在各种工作负载的成本和性能之间实现平衡。
++
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html#sizing-your-system-in-aws["了解有关将 GP3 磁盘与 Cloud Volumes ONTAP 结合使用的更多信息"^]。
+
+* Cloud Volumes ONTAP 不再支持冷 HDD （ SC1 ）磁盘。
+
+
+这些 EBS 磁盘更改是在 Cloud Manager 3.3.5 中引入的。
+
+* Azure 更新 *
+
+* 支持新的 E 系列 VM 类型：
++
+** 使用 PAYGO Explore 或 BYOL 的单节点系统的 E4s_v3
+** 使用 PAYGO Standard 或 BYOL 的单节点系统的 E8s_v3 ，以及使用 PAYGO Premium 或 BYOL 的 HA 对
+** 使用 PAYGO Premium 或 BYOL 的单节点系统的 E64is_v3
+
+
+* Cloud Volumes ONTAP BYOL 最多支持 24 个 Storage VM （ SVM ）。这 24 个 Storage VM 可以提供数据或配置为灾难恢复（ Disaster Recovery ， DR ）。
++
+9.9.0 版本中先前的限制是在 Azure 中使用 12 个 Storage VM 进行灾难恢复。
+
+
+
+
+
+== 9.9.0 GA （ 2021 年 3 月 9 日）
+
+9.9.0 GA 版本可在 AWS ， Azure 和 Google Cloud Platform 中使用。此版本包括以下新增功能和增强功能。
+
+
+
+=== 提高写入性能
+
+此版本提高了所有云提供商和所有配置中 Cloud Volumes ONTAP 的写入性能。
+
+
+
+=== 支持新的 EC2 实例类型
+
+以下 Amazon EC2 实例类型现在支持 Cloud Volumes ONTAP ：
+
+* m5a.2xlarge ，带有 Standard 和 BYOL
+* m5a.16x 大容量，含高级版和 BYOL
+* C5a.12 x 大号，带高级版和 BYOL
+
+
+了解更多信息 https://aws.amazon.com/ec2/instance-types/m5/["M5a 实例"^] 和 https://aws.amazon.com/ec2/instance-types/c5/["C5a 实例"^]。
+
+link:reference-configs-aws.html["查看 AWS 中支持的配置"]。
+
+
+
+=== 支持 Azure 中的 24 个 Storage VM
+
+现在，当您自带许可证（ BYOL ）时， Azure 中的 Cloud Volumes ONTAP 支持 24 个 Storage VM 。其中包括最多 12 个用于灾难恢复的 Storage VM 。
+
+默认情况下，除了 Cloud Volumes ONTAP 附带的第一个 Storage VM 之外，每个额外的 _data-fering-storage VM 都需要附加许可证。请联系您的客户团队以获取 SVM 附加许可证。
+
+您为灾难恢复（ DR ）配置的 Storage VM 不需要附加许可证（它们是免费的），但它们会计入 Storage VM 限制。
+
+link:reference-limits-azure.html#storage-vm-limits["详细了解 Azure 中的 Storage VM 限制"]。
+
+https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html["了解如何在 Azure 中为 Cloud Volumes ONTAP 创建提供数据的 Storage VM"^]。
+
+
+
+== 所需版本的 Cloud Manager Connector
+
+要部署新的 Cloud Volumes ONTAP 9.9.0 系统并将现有系统升级到 9.0.0 ， Cloud Manager Connector 必须运行 3.9.4 或更高版本。
+
+
+
+== Cloud Manager 3.9.4 中引入的变更
+
+Cloud Manager 3.9.4 版提供了一些 Cloud Volumes ONTAP 管理增强功能，包括 AWS KMS 支持增强功能， Google Cloud 中的共享 VPC 支持以及 Google Cloud 中的减少 IP 数量。
+
+转至 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["Cloud Manager 发行说明"^] 有关 3.9.4 版的详细信息。
+
+
+
+== 升级说明
+
+* Cloud Volumes ONTAP 升级必须从 Cloud Manager 完成。您不应使用 System Manager 或命令行界面升级 Cloud Volumes ONTAP 。这样做可能会影响系统稳定性。
+* 您可以从 9.8 版升级到 Cloud Volumes ONTAP 9.9.0 。Cloud Manager 将提示您将现有 Cloud Volumes ONTAP 9.8 系统升级到 9.9.0 版本。
++
+http://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html["了解在 Cloud Manager 通知您时如何升级"^]。
+
+* 升级单节点系统会使系统脱机长达 25 分钟，在此期间 I/O 会中断。
+* 升级 HA 对无中断， I/O 不会中断。在此无中断升级过程中，每个节点会同时进行升级，以继续为客户端提供 I/O 。
+
+
+
+
+=== c4 ， m4 和 r4 实例类型
+
+从 9.8 版开始，新的 Cloud Volumes ONTAP 系统不支持 C4 ， M4 和 r4 实例类型。如果您的现有 Cloud Volumes ONTAP 系统运行的是 C4 ， M4 或 r4 实例类型，则仍可升级到此版本。
+
+建议更改为 c5 ， m5 或 R5 实例系列中的实例类型。
