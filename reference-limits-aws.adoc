@@ -6,6 +6,7 @@ summary: Cloud Volumes ONTAP 在 AWS 中具有存储配置限制，可提供可�
 ---
 = AWS 中的存储限制
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 
@@ -210,7 +211,19 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-sv
 | 许可证类型 | 实例系列 | Storage VM 限制 
 
 
-.2+| * PAYGO* | c4 ， m4 和 r4  a| 
+| * 免费 * | c5 ， m5 和 R5  a| 
+* 共 24 个 Storage VM ^1 ， 2^
+
+
+
+
+| * 基于容量的 PAYGO 或 BYOL* ^3^ | c5 ， m5 和 R5  a| 
+* 共 24 个 Storage VM ^1 ， 2^
+
+
+
+
+.2+| * 基于节点的 PAYGO* | c4 ， m4 和 r4  a| 
 * 1 个存储 VM 用于提供数据
 * 1 个 Storage VM 用于灾难恢复
 
@@ -220,18 +233,6 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-sv
 | c5 ， m5 和 R5  a| 
 * 1 个存储 VM 用于提供数据
 * 1 个 Storage VM 用于灾难恢复
-
-
-
-
-| * 免费 * | c5 ， m5 和 R5  a| 
-* 共 24 个 Storage VM ^1 ， 2^
-
-
-
-
-| * 基于容量的许可证 * ^3^ | c5 ， m5 和 R5  a| 
-* 共 24 个 Storage VM ^1 ， 2^
 
 
 
