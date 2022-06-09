@@ -685,7 +685,6 @@
   <block id="398d7dd4fa02e30dc6322ad98eff7d2b" category="paragraph">您可以在中找到 ONTAP 软件的已知问题<block ref="13c0668cefb5d13050e1de01793dacbb" category="inline-link-rx"></block>。</block>
   <block id="70f6dd02b4e4b6c53ad0fb19908fde15" category="summary">本发行说明介绍了 Cloud Volumes ONTAP 9.0.0 的新增功能，限制和已知问题。</block>
   <block id="f69c520b80623b45a73d2418861dfa2b" category="doc">《 Cloud Volumes ONTAP 9.9.0 发行说明》</block>
-  <block id="7ff191df90fac0fa94ab5c2b5101a5e9" category="sidebar">所有 Cloud Manager 文档</block>
   <block id="da38098873cb3db962a9491ab33ff93d" category="sidebar">发行说明主页</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">新增功能</block>
   <block id="4847e034bb0a55fcbc8a3380d6a3ab80" category="sidebar">AWS</block>
@@ -732,4 +731,11 @@
   <block id="fed5c8246ca485a22abc959eb3025a8c" category="admonition">免费试用开始、剩余7天以及剩余1天时、您将在Cloud Manager中收到通知。例如：<block ref="4c1747a7ecb096dffecedae45404dae8" category="inline-image-macro-rx" type="image"></block></block>
   <block id="451e7fc5df78c19113abdb3f6a0dc54e" category="paragraph">了解如何开始使用基于容量的许可：</block>
   <block id="fdb736034a6801c8a5010a511211a4a7" category="paragraph">了解如何开始使用Keystone Flex订阅：</block>
+  <block id="195512f323b29b79f5b71cceb3a49a7d" category="list-text">E80ids_v4 ^2^</block>
+  <block id="4e1b6146fa2cb1efc8bff10f1cf7e93c" category="list-text">E80ids_v4 ^1、2^</block>
+  <block id="4efc25f6cc7013d95ca2f5ab1dcc3366" category="list-text">只有在需要 Azure 维护控制时，才建议使用此虚拟机。由于定价较高，因此不建议用于任何其他使用情形。</block>
+  <block id="6b9d51616a5f0637dd2fb237d868c037" category="cell">E80ids_v4</block>
+  <block id="5505ffcb759fb1c9c3793b2dd386cd82" category="inline-link">了解如何在PAYGO和BYOL之间切换</block>
+  <block id="e1e947c069bd154f04aefec0a6619873" category="paragraph">请注意、不支持将系统从PAYGO by node许可转换为BYOL by-node许可(反之亦然)。您需要部署一个新系统、然后将数据复制到该系统。<block ref="c9d55d60961394f2cbacfb1050626915" category="inline-link-rx"></block></block>
+  <block id="bc503c45d950d94391e7685c6585b286" category="cell">m5dn.12 x大型</block>
 </blocks>
