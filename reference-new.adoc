@@ -16,7 +16,7 @@ summary: Cloud Volumes ONTAP 9.9.0 提供了几项新功能和增强功能。
 [role="lead"]
 Cloud Volumes ONTAP 9.9.0 提供了几项新功能和增强功能。
 
-最新版本的 Cloud Manager 还引入了其他功能和增强功能。请参见 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["Cloud Manager 发行说明"^] 了解详细信息。
+最新版本的BlueXP还引入了其他功能和增强功能。请参见 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["《BlueXP发行说明》"^] 了解详细信息。
 
 
 
@@ -51,7 +51,7 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-planning-yo
 * Cloud Volumes ONTAP 不再支持冷 HDD （ SC1 ）磁盘。
 
 
-这些 EBS 磁盘更改是在 Cloud Manager 3.3.5 中引入的。
+这些EBS磁盘更改是在BlueXP 3.3.5中引入的。
 
 * Azure 更新 *
 
@@ -111,26 +111,26 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-sv
 
 
 
-== 所需版本的 Cloud Manager Connector
+== 所需版本的BlueXP Connector
 
-要部署新的 Cloud Volumes ONTAP 9.9.0 系统并将现有系统升级到 9.0.0 ， Cloud Manager Connector 必须运行 3.9.4 或更高版本。
+要部署新的Cloud Volumes ONTAP 9.9.0系统并将现有系统升级到9.0.0、BlueXP Connector必须运行3.9.4或更高版本。
 
 
 
-== Cloud Manager 3.9.4 中引入的变更
+== 对Connector 3.9.4版进行了更改
 
-Cloud Manager 3.9.4 版提供了一些 Cloud Volumes ONTAP 管理增强功能，包括 AWS KMS 支持增强功能， Google Cloud 中的共享 VPC 支持以及 Google Cloud 中的减少 IP 数量。
+连接器3.9.4版提供了一些Cloud Volumes ONTAP 管理增强功能、包括AWS KMS支持增强功能、Google Cloud中的共享VPC支持以及Google Cloud中的减少IP数量。
 
-转至 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["Cloud Manager 发行说明"^] 有关 3.9.4 版的详细信息。
+转至 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["《BlueXP发行说明》"^] 有关 3.9.4 版的详细信息。
 
 
 
 == 升级说明
 
-* Cloud Volumes ONTAP 升级必须从 Cloud Manager 完成。您不应使用 System Manager 或命令行界面升级 Cloud Volumes ONTAP 。这样做可能会影响系统稳定性。
-* 您可以从 9.8 版升级到 Cloud Volumes ONTAP 9.9.0 。Cloud Manager 将提示您将现有 Cloud Volumes ONTAP 9.8 系统升级到 9.9.0 版本。
+* 必须从BlueXP完成Cloud Volumes ONTAP 升级。您不应使用 System Manager 或命令行界面升级 Cloud Volumes ONTAP 。这样做可能会影响系统稳定性。
+* 您可以从 9.8 版升级到 Cloud Volumes ONTAP 9.9.0 。BlueXP将提示您将现有Cloud Volumes ONTAP 9.8系统升级到9.9.0版本。
 +
-http://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html["了解在 Cloud Manager 通知您时如何升级"^]。
+http://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html["了解在收到BlueXP通知时如何升级"^]。
 
 * 升级单节点系统会使系统脱机长达 25 分钟，在此期间 I/O 会中断。
 * 升级 HA 对无中断， I/O 不会中断。在此无中断升级过程中，每个节点会同时进行升级，以继续为客户端提供 I/O 。

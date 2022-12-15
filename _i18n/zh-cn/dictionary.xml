@@ -14,7 +14,6 @@
   <block id="032ad17d65f47ce036675718d3986c48" category="paragraph">C5D 和 R5D 实例类型包括本地 NVMe 存储， Cloud Volumes ONTAP 将其用作 _Flash Cache_ 。请注意以下限制：</block>
   <block id="341cc964e0c52fec40f9705182116dda" category="list-text">必须在所有卷上禁用数据压缩，才能利用 Flash Cache 性能改进功能。</block>
   <block id="405cb575e50b611a22ec99d1abb3f202" category="inline-link">使用命令行界面禁用数据压缩</block>
-  <block id="e7c76e369ac11cd66c4eb87009b46b45" category="paragraph">您可以在从 Cloud Manager 创建卷时选择无存储效率，也可以先创建卷，然后再创建卷<block ref="41233aab48d70287f1bbc60d78ce6eab" category="inline-link-rx"></block>。</block>
   <block id="444f10b28a63ab25d9664d0647602d07" category="list-text">Cloud Volumes ONTAP 不支持在重新启动后重新恢复缓存。</block>
   <block id="c564897ef3b9328940c3edd5bc917926" category="section-title">Amazon CloudWatch 报告错误警报</block>
   <block id="4b88d56bd65ef92611ac63064c38369f" category="inline-link">Amazon CloudWatch</block>
@@ -28,7 +27,6 @@
   <block id="b3dfe19c7d46d1f8795ac17bf3d5a909" category="paragraph">Cloud Volumes ONTAP 具有存储配置限制，可提供可靠的操作。为获得最佳性能，请勿将系统配置为最大值。</block>
   <block id="ecedb9353641e4bd058af0268a6edce8" category="section-title">按许可证计算的最大系统容量</block>
   <block id="6fa7d9268a4a052eee070e7e621245fe" category="paragraph">Cloud Volumes ONTAP 系统的最大系统容量取决于其许可证。最大系统容量包括基于磁盘的存储以及用于数据分层的对象存储。</block>
-  <block id="b160602445b0a1ec96684f26bf8b35d3" category="paragraph">NetApp 不支持超过系统容量限制。如果您达到许可的容量限制， Cloud Manager 将显示一条需要执行操作消息，并且不再允许您添加其他磁盘。</block>
   <block id="ba23388576c937a1743b84554bd13c72" category="inline-link">将非活动数据分层到对象存储</block>
   <block id="13e43f7520d8163c6554fc15774d56ed" category="paragraph">对于某些配置，磁盘限制会阻止您单独使用磁盘来达到容量限制。在这些情况下，您可以通过达到容量限制<block ref="91a4fc4ecb983c2fca7588f26341e223" category="inline-link-rx"></block>。有关详细信息，请参见以下容量和磁盘限制。</block>
   <block id="794df3791a8c800841516007427a2aa3" category="cell">许可证</block>
@@ -46,7 +44,6 @@
   <block id="376c581ebe9ec9aa8853377f8538ebbd" category="cell">基于容量的许可证</block>
   <block id="9010e525ec80d0fdea3d56191f64ce39" category="cell">2 个 PIB</block>
   <block id="44007958b04e5e15a25a3ca1ee98abeb" category="paragraph">容量限制适用于整个 HA 对。不是每个节点。例如，如果使用高级版许可证，则两个节点之间的容量最多可达 368 TiB 。</block>
-  <block id="8644b747d80d3144a35c2f7a3eb37c2e" category="paragraph">不可以。AWS HA 对中的数据会在节点之间同步镜像，以便在发生故障时可以使用这些数据。例如，如果您在节点 A 上购买了 8 TiB 磁盘，则 Cloud Manager 还会在节点 B 上分配一个 8 TiB 磁盘，用于镜像数据。虽然配置了 16 TiB 的容量，但许可证限制仅会计入 8 TiB 的容量。</block>
   <block id="c029ebf0cab0f40812ebec7c644fef41" category="section-title">EC2 实例的磁盘和分层限制</block>
   <block id="5a9c94e941761c15ef227dfa8c3fc6d8" category="paragraph">Cloud Volumes ONTAP 使用 EBS 卷作为磁盘，最大磁盘大小为 16 TiB 。以下各节显示了 EC2 实例系列的磁盘和分层限制，因为许多 EC2 实例类型具有不同的磁盘限制。单节点系统和 HA 对之间的磁盘限制也不同。</block>
   <block id="cf3a2d2c139bf5c9cc87fe714bfff3b1" category="paragraph">请注意以下事项：</block>
@@ -145,7 +142,6 @@
   <block id="02e74f10e0327ad868d138f2b4fdd6f0" category="cell">27</block>
   <block id="67c6a1e7ce56d3d6fa748ab6d9af3fd7" category="cell">47</block>
   <block id="ecec66d315c28b83ea2e4c24466a6778" category="list-text">此数字表示部署和设置 Cloud Volumes ONTAP 后端口 e0a 上有多少个 _realfates_ 专用 IP 地址可用。例如，一个 * 。 2xlarge 系统最多支持每个网络接口 15 个 IP 地址。在一个 AZ 中部署 HA 对时，会将 5 个专用 IP 地址分配给端口 e0a 。因此，使用 * 。 2xlarge 实例类型的 HA 对还有 10 个专用 IP 地址可用于其他 Storage VM 。</block>
-  <block id="717ac98dd2c26224834bdc47a5a79849" category="list-text">这些列中列出的数字包括 Cloud Manager 默认创建的初始 Storage VM 。例如，如果此列中列出 24 个，则表示您可以再创建 23 个 Storage VM ，总共可以创建 24 个。</block>
   <block id="5be8cdd9a3ac4856418d3e7ef11fe0d1" category="list-text">Storage VM 的管理 LIF 是可选的。管理 LIF 可连接到 SnapCenter 等管理工具。</block>
   <block id="d5b5d1eda2a2c0d060f59094000e6aea" category="paragraph">由于它需要专用 IP 地址，因此会限制您可以创建的其他 Storage VM 的数量。唯一的例外是多个 AZS 中的 HA 对。在这种情况下，管理 LIF 的 IP 地址为 _float_ IP 地址，因此不计入 _private_ IP 限制。</block>
   <block id="4f9154c68af93dc525373bf1a9c2edce" category="section-title">文件和卷限制</block>
@@ -208,7 +204,6 @@
   <block id="86eaddcad9cef8a014b014a3ad2afb9c" category="cell">368 TB</block>
   <block id="38797647ee0806ca5a6dba902f03f6e0" category="cell">每个许可证 368 TB</block>
   <block id="ce5ee1bd79a3fbc4ee9fee207a94ef54" category="paragraph">容量限制适用于整个 HA 对。不是每个节点。例如，如果使用高级版许可证，则两个节点之间的容量最多可达 368 TB 。</block>
-  <block id="1ddc84b3dc9fe6599d89fd9b7f5c6660" category="paragraph">不可以。HA 对中的数据会在节点之间同步镜像，以便在 Google Cloud 发生故障时可以使用这些数据。例如，如果您在节点 A 上购买了 8 TB 磁盘，则 Cloud Manager 还会在节点 B 上分配一个 8 TB 磁盘，用于镜像数据。虽然配置了 16 TB 的容量，但许可证限制仅会计入 8 TB 的容量。</block>
   <block id="466cd90b62b5da75ee4bd662add41e7f" category="section-title">磁盘和分层限制</block>
   <block id="49e0d392d83f24aa1384f18b22975ef6" category="paragraph">下表显示了单独使用磁盘以及将磁盘和冷数据分层到对象存储的最大系统容量。磁盘限制特定于包含用户数据的磁盘。这些限制不包括启动磁盘和根磁盘。</block>
   <block id="08fca9107919e2a3190d5edc75ce7c61" category="cell">最大数据磁盘数</block>
@@ -234,7 +229,6 @@
   <block id="324f218b8144e744b54eb58e0bf14eea" category="cell">16 TB</block>
   <block id="fa6258f6bacddead986c2cbf9e97e512" category="cell">分层克隆深度 ^2^</block>
   <block id="309524b9e1ef1d7d7d905c7cb1d358e9" category="cell">100 TB</block>
-  <block id="f930216066584d74a1d100b4781661f9" category="list-text">Cloud Manager 不为 SVM 灾难恢复提供任何设置或业务流程支持。它也不支持在其他 SVM 上执行与存储相关的任务。必须使用 System Manager 或 CLI 进行 SVM 灾难恢复。</block>
   <block id="412af2a2404a4e920b18be59197204b0" category="inline-link">《 SVM 灾难恢复准备快速指南》</block>
   <block id="c15bb50c43eaf0ceb1bc0ce3d7503ebd" category="list-text"><block ref="c15bb50c43eaf0ceb1bc0ce3d7503ebd" category="inline-link-rx"></block></block>
   <block id="a06e9c241b02eb678d35f19c0eec257f" category="inline-link">《 SVM 灾难恢复快速指南》</block>
@@ -438,12 +432,7 @@
   <block id="38220a2514a2fcb218be440c035b4175" category="section-title">Cloud Volumes ONTAP 支持预留和按需 VM 实例</block>
   <block id="8ce602039d8c7d53c95e1f62b1d83ef0" category="paragraph">Cloud Volumes ONTAP 可以在云提供商提供的预留或按需 VM 实例上运行。不支持其他类型的 VM 实例。</block>
   <block id="f9492a63b4f60679d003c1e9c0ebbb18" category="paragraph">自动应用程序资源管理解决方案不应管理 Cloud Volumes ONTAP 系统。这样做可能会导致更改不受支持的配置。例如，解决方案可能会将 Cloud Volumes ONTAP 更改为不受支持的 VM 实例类型。</block>
-  <block id="1d7a5501cfb31aff808abb63ef9085c2" category="section-title">软件更新必须由 Cloud Manager 完成</block>
-  <block id="93e3c3d0ea43d600b3c3cd4548ea3987" category="paragraph">Cloud Volumes ONTAP 升级必须从 Cloud Manager 完成。您不应使用 System Manager 或命令行界面升级 Cloud Volumes ONTAP 。这样做可能会影响系统稳定性。</block>
   <block id="cbc4bd981852b46f0fbf6e6a6d4ed5af" category="section-title">不得从云提供商的控制台修改 Cloud Volumes ONTAP 部署</block>
-  <block id="5f706f3e7b360cd0d02bd068f4ba9afa" category="paragraph">通过云提供商的控制台更改 Cloud Volumes ONTAP 配置会导致配置不受支持。对 Cloud Manager 创建和管理的 Cloud Volumes ONTAP 资源进行的任何更改都会影响系统稳定性以及 Cloud Manager 管理系统的能力。</block>
-  <block id="871cdf07a10d1cc27cb3166e7a820a66" category="section-title">磁盘和聚合必须通过 Cloud Manager 进行管理</block>
-  <block id="dbdb55d3acfbb139cd66db544b19d738" category="paragraph">必须直接从 Cloud Manager 创建和删除所有磁盘和聚合。不应从其他管理工具执行这些操作。这样做可能会影响系统稳定性、妨碍将来添加磁盘的能力、并可能产生冗余云提供商费用。</block>
   <block id="4d2719ea5599a5bf1a9973d3b247f959" category="section-title">SnapManager 许可限制</block>
   <block id="c91bb6f1740b2a7b3e274deca5e32b94" category="paragraph">Cloud Volumes ONTAP 支持 SnapManager 每服务器许可证。不支持每存储系统（ SnapManager 套件）许可证。</block>
   <block id="c3f5fdee9b6adb6eccff2d4c189ead12" category="section-title">不支持的 ONTAP 功能</block>
@@ -467,8 +456,6 @@
   <block id="87495e311a3944910e3cc0c7bee3d754" category="list-text">VLAN</block>
   <block id="a0b4f6a123d692f673f8e386d610732c" category="summary">Cloud Volumes ONTAP 9.9.0 提供了几项新功能和增强功能。</block>
   <block id="0e7e6b95ab44b5c9dd164ebe8aa66092" category="doc">Cloud Volumes ONTAP 9.9.0 中的新增功能</block>
-  <block id="f9d74313da16b2bb412c1d7c5efd0534" category="inline-link">Cloud Manager 发行说明</block>
-  <block id="62703524dbb4d20326585184b2149d4d" category="paragraph">最新版本的 Cloud Manager 还引入了其他功能和增强功能。请参见<block ref="b168941a5dc7eab411ef9dc2c7a220db" category="inline-link-rx"></block> 了解详细信息。</block>
   <block id="422377493977e63c0bd8424963633516" category="section-title">最新更新（ 2021 年 4 月 21 日）</block>
   <block id="fb064ee7b94ba2fa52f1a7828fd59e25" category="paragraph">现在，在 AWS 中，您最多可以配置 24 个 Storage VM （ SVM ）以进行灾难恢复（ DR ）。以前的限制是用于灾难恢复的 12 个 Storage VM 。</block>
   <block id="78603b9991ff000dccbb5ded6c49fa70" category="inline-link-macro">了解有关 Storage VM 限制的更多信息</block>
@@ -480,7 +467,6 @@
   <block id="78bc98a7ac6c3cfd719ffa5be638119b" category="inline-link">了解有关将 GP3 磁盘与 Cloud Volumes ONTAP 结合使用的更多信息</block>
   <block id="3d0d920a11a5c82c199e03f396f16cbd" category="paragraph"><block ref="3f1287fe1a8a51a4d465bb2bff3f3790" category="inline-link-rx"></block>。</block>
   <block id="46d98c0abb13a137de84cc92dabaf4ee" category="list-text">Cloud Volumes ONTAP 不再支持冷 HDD （ SC1 ）磁盘。</block>
-  <block id="43ab30bcd6753a8f13ff684dc91925f0" category="paragraph">这些 EBS 磁盘更改是在 Cloud Manager 3.3.5 中引入的。</block>
   <block id="93a805de30db8aed5e29e7e223c52ea5" category="paragraph">* Azure 更新 *</block>
   <block id="416247cdfd95c24e8b0018dec41624a5" category="list-text">支持新的 E 系列 VM 类型：</block>
   <block id="89567849e54395d27c32428de6821a45" category="list-text">使用 PAYGO Explore 或 BYOL 的单节点系统的 E4s_v3</block>
@@ -510,15 +496,7 @@
   <block id="c45e0618f61cd169e7df7902bdc87404" category="paragraph"><block ref="4f31f2ea9e29a63df80425f70a7a8783" category="inline-link-macro-rx"></block>。</block>
   <block id="23561ac981518cd9f15688095bc213d2" category="inline-link">了解如何在 Azure 中为 Cloud Volumes ONTAP 创建提供数据的 Storage VM</block>
   <block id="825e796c63880b40a41080420bc84ff8" category="paragraph"><block ref="ebf8dba73a080cc5870e50d75600264c" category="inline-link-rx"></block>。</block>
-  <block id="40a3c7b33b166dae48cfa8c02b36318a" category="section-title">所需版本的 Cloud Manager Connector</block>
-  <block id="fa76400c45fa16f022dbcd0982694743" category="paragraph">要部署新的 Cloud Volumes ONTAP 9.9.0 系统并将现有系统升级到 9.0.0 ， Cloud Manager Connector 必须运行 3.9.4 或更高版本。</block>
-  <block id="bd14a5e36ade099a2c13e0ed84db8ee1" category="section-title">Cloud Manager 3.9.4 中引入的变更</block>
-  <block id="5352e20d71415eddcd531509917d36f7" category="paragraph">Cloud Manager 3.9.4 版提供了一些 Cloud Volumes ONTAP 管理增强功能，包括 AWS KMS 支持增强功能， Google Cloud 中的共享 VPC 支持以及 Google Cloud 中的减少 IP 数量。</block>
-  <block id="8cfeb79ade665793ea264217386bd14b" category="paragraph">转至<block ref="b168941a5dc7eab411ef9dc2c7a220db" category="inline-link-rx"></block> 有关 3.9.4 版的详细信息。</block>
   <block id="b5cb41a6703cf18b4cecd5a0817f91cf" category="section-title">升级说明</block>
-  <block id="b26ba6521088950e63da32767807013a" category="list-text">您可以从 9.8 版升级到 Cloud Volumes ONTAP 9.9.0 。Cloud Manager 将提示您将现有 Cloud Volumes ONTAP 9.8 系统升级到 9.9.0 版本。</block>
-  <block id="1c58b0eb30a6dcb357eb70a5f2b7b763" category="inline-link">了解在 Cloud Manager 通知您时如何升级</block>
-  <block id="803d45df8eb29c3872409cc750868adb" category="paragraph"><block ref="91157be1d04ccb789488c1869d33e63c" category="inline-link-rx"></block>。</block>
   <block id="9f0f02784feedfa2549a9e3a51cfa315" category="list-text">升级单节点系统会使系统脱机长达 25 分钟，在此期间 I/O 会中断。</block>
   <block id="00795e3f043d0bab791590ffc0257204" category="list-text">升级 HA 对无中断， I/O 不会中断。在此无中断升级过程中，每个节点会同时进行升级，以继续为客户端提供 I/O 。</block>
   <block id="9141535b8d150812f3cded29f090ad8c" category="summary">Google Cloud 支持多种 Cloud Volumes ONTAP 配置。</block>
@@ -539,7 +517,6 @@
   <block id="46e869bc0f7a5fcdc09df010e1f48b25" category="list-text">新的 Cloud Volumes ONTAP 系统不再支持 custom-4-16384 计算机类型。</block>
   <block id="0e3cb01898d99d0091e2a6f5a7572390" category="paragraph">如果您的现有系统在此计算机类型上运行，则可以继续使用它，但我们建议切换到 n2-standard-4 计算机类型。</block>
   <block id="5063d3259058d90bbca06465957626d7" category="list-text">使用 SSD 时会启用增强的写入性能。</block>
-  <block id="1d929e66099bae4b599c315f4d90f467" category="list-text">Cloud Manager 界面显示了 Standard 和 BYOL 支持的另一种计算机类型： N1-HIGHEM-4 。但是，此计算机类型并不适用于生产环境。我们已将其仅用于特定实验室环境。</block>
   <block id="7093754c2bc2f151c7deef337385971a" category="list-text">有关 Google Cloud Platform 区域支持，请参见<block ref="2b6a522631c3b3b8afac5466195e108a" category="inline-link-rx"></block>。</block>
   <block id="d29bff99e1f1d5529824e9017672d630" category="paragraph">在 Google Cloud 中，一个聚合最多可以包含 6 个类型和大小相同的磁盘。支持以下磁盘大小：</block>
   <block id="dcfebc6fbca2c5316f55c914e6593d2d" category="list-text">100 GB</block>
@@ -642,4 +619,27 @@
   <block id="2f9882645b2c32820ad085240bacb763" category="paragraph-title">对于 HA ，是每个节点的许可证容量限制还是整个 HA 对的许可证容量限制？</block>
   <block id="fc9a388cd18c69244f22554de6f0d544" category="paragraph-title">对于 AWS 中的 HA 系统，镜像数据是否计入容量限制？</block>
   <block id="1f129df010c594cb0d37bd30745a3820" category="paragraph"><block ref="1f129df010c594cb0d37bd30745a3820" category="inline-link-rx"></block></block>
+  <block id="30749b02bc62d931d770e6c719254e7b" category="list-text">BlueXP界面显示了Standard和BYOL支持的另一种计算机类型：N1-HIGHMEM-4。但是，此计算机类型并不适用于生产环境。我们已将其仅用于特定实验室环境。</block>
+  <block id="406542fd6b2bb7b1e564e4a6d627bddb" category="paragraph">NetApp 不支持超过系统容量限制。如果您达到许可的容量限制、BlueXP将显示一条需要执行操作消息、并且不再允许您添加其他磁盘。</block>
+  <block id="59f715c959b1702bb88d03230a637982" category="paragraph">不可以。AWS HA 对中的数据会在节点之间同步镜像，以便在发生故障时可以使用这些数据。例如、如果您在节点A上购买了8 TiB磁盘、则BlueXP还会在节点B上分配一个8 TiB磁盘、用于镜像数据。虽然配置了 16 TiB 的容量，但许可证限制仅会计入 8 TiB 的容量。</block>
+  <block id="846a4ecea919427b6111365c125ada6f" category="list-text">这些列中列出的数字包括BlueXP默认创建的初始Storage VM。例如，如果此列中列出 24 个，则表示您可以再创建 23 个 Storage VM ，总共可以创建 24 个。</block>
+  <block id="bbccc552f0baf5d6702dcf1598299981" category="list-text">BlueXP不为SVM灾难恢复提供任何设置或编排支持。它也不支持在其他 SVM 上执行与存储相关的任务。必须使用 System Manager 或 CLI 进行 SVM 灾难恢复。</block>
+  <block id="38575f0fc0d26dc67b2a72ebc7d0e845" category="paragraph">您可以在从BlueXP创建卷时选择无存储效率、也可以先创建卷、然后再创建卷<block ref="41233aab48d70287f1bbc60d78ce6eab" category="inline-link-rx"></block>。</block>
+  <block id="fd1f8e9df9f2971a09de148f57ee5ce0" category="section-title">软件更新必须由BlueXP完成</block>
+  <block id="c6925d752394e325c0b435137fbe997c" category="paragraph">必须从BlueXP完成Cloud Volumes ONTAP 升级。您不应使用 System Manager 或命令行界面升级 Cloud Volumes ONTAP 。这样做可能会影响系统稳定性。</block>
+  <block id="93931e849ddff0b1178bc9a719400883" category="paragraph">通过云提供商的控制台更改 Cloud Volumes ONTAP 配置会导致配置不受支持。如果对Cloud Volumes ONTAP 资源进行任何更改、由BlueXP创建和管理、可能会影响系统稳定性以及BlueXP管理系统的能力。</block>
+  <block id="50cc29422b9e0a20958b889dcdd61a0f" category="section-title">磁盘和聚合必须通过BlueXP进行管理</block>
+  <block id="0dca6333e3e343d1b25adfe474ce6b88" category="paragraph">必须直接从BlueXP创建和删除所有磁盘和聚合。不应从其他管理工具执行这些操作。这样做可能会影响系统稳定性、妨碍将来添加磁盘的能力、并可能产生冗余云提供商费用。</block>
+  <block id="9889b7a9df56580016f59ccd942fb1d1" category="inline-link">《BlueXP发行说明》</block>
+  <block id="619c180e46c9dec776a0347d35298e14" category="paragraph">最新版本的BlueXP还引入了其他功能和增强功能。请参见<block ref="6872c7556ed1cb501f7ddf52354e86ee" category="inline-link-rx"></block> 了解详细信息。</block>
+  <block id="b0659f5ee885f81552df48485c7c5771" category="paragraph">这些EBS磁盘更改是在BlueXP 3.3.5中引入的。</block>
+  <block id="69d7d15e9cd221668022d228a90f926a" category="section-title">所需版本的BlueXP Connector</block>
+  <block id="eec9643ffdd542b5de1b9118e35e43fb" category="paragraph">要部署新的Cloud Volumes ONTAP 9.9.0系统并将现有系统升级到9.0.0、BlueXP Connector必须运行3.9.4或更高版本。</block>
+  <block id="774011294b90ee94b95b1f8934d49a0a" category="section-title">对Connector 3.9.4版进行了更改</block>
+  <block id="e535960ad08948ea2279c759ea0ca469" category="paragraph">连接器3.9.4版提供了一些Cloud Volumes ONTAP 管理增强功能、包括AWS KMS支持增强功能、Google Cloud中的共享VPC支持以及Google Cloud中的减少IP数量。</block>
+  <block id="1fa5bc3f7a3a251f52ae2e9bbf51c563" category="paragraph">转至<block ref="6872c7556ed1cb501f7ddf52354e86ee" category="inline-link-rx"></block> 有关 3.9.4 版的详细信息。</block>
+  <block id="7f7391e18716864e316aeb678b1bd017" category="list-text">您可以从 9.8 版升级到 Cloud Volumes ONTAP 9.9.0 。BlueXP将提示您将现有Cloud Volumes ONTAP 9.8系统升级到9.9.0版本。</block>
+  <block id="c716eebe2519c2ba4a2e109b59dd8b13" category="inline-link">了解在收到BlueXP通知时如何升级</block>
+  <block id="bd4bd858d3e1a85d30586455b3e9daf2" category="paragraph"><block ref="6a49825bad49c3be284ac7a237bc2a26" category="inline-link-rx"></block>。</block>
+  <block id="40aa449308d0af16355f19e61ffe344b" category="paragraph">不可以。HA 对中的数据会在节点之间同步镜像，以便在 Google Cloud 发生故障时可以使用这些数据。例如、如果您在节点A上购买了8 TB磁盘、则BlueXP还会在节点B上分配一个8 TB磁盘、用于镜像数据。虽然配置了 16 TB 的容量，但许可证限制仅会计入 8 TB 的容量。</block>
 </blocks>
