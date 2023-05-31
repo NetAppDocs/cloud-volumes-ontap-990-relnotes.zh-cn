@@ -16,7 +16,7 @@ summary: Cloud Volumes ONTAP 9.9.0 提供了几项新功能和增强功能。
 [role="lead"]
 Cloud Volumes ONTAP 9.9.0 提供了几项新功能和增强功能。
 
-最新版本的BlueXP还引入了其他功能和增强功能。请参见 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["《BlueXP发行说明》"^] 了解详细信息。
+最新版本的BlueXP还引入了其他功能和增强功能。请参见 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html["《BlueXP发行说明》"^] 了解详细信息。
 
 
 
@@ -24,7 +24,7 @@ Cloud Volumes ONTAP 9.9.0 提供了几项新功能和增强功能。
 
 在AWS中、Cloud Volumes ONTAP 不再支持C4、M4和M4 EC2实例类型。如果现有系统运行的是C4、M4或r4实例类型、则必须更改为c5、M5或R5实例系列中的实例类型。
 
-link:https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-change-ec2-instance.html["了解如何更改Cloud Volumes ONTAP 的EC2实例类型"^]。
+link:https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-change-ec2-instance.html["了解如何更改Cloud Volumes ONTAP 的EC2实例类型"^]。
 
 请参见 link:https://mysupport.netapp.com/info/communications/ECMLP2880231.html["NetApp 支持"^] 了解有关这些实例类型的可用性和支持终止的更多信息。
 
@@ -46,7 +46,7 @@ link:reference-limits-aws.html#storage-vm-limits["了解有关 Storage VM 限制
 
 * 从 9.7 版开始， Cloud Volumes ONTAP 现在支持通用 SSD （ GP3 ）磁盘。GP3 磁盘是成本最低的 SSD ，可在各种工作负载的成本和性能之间实现平衡。
 +
-https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-planning-your-config.html#sizing-your-system-in-aws["了解有关将 GP3 磁盘与 Cloud Volumes ONTAP 结合使用的更多信息"^]。
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-planning-your-config.html#sizing-your-system-in-aws["了解有关将 GP3 磁盘与 Cloud Volumes ONTAP 结合使用的更多信息"^]。
 
 * Cloud Volumes ONTAP 不再支持冷 HDD （ SC1 ）磁盘。
 
@@ -107,7 +107,7 @@ link:reference-configs-aws.html["查看 AWS 中支持的配置"]。
 
 link:reference-limits-azure.html#storage-vm-limits["详细了解 Azure 中的 Storage VM 限制"]。
 
-https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-svms-azure.html["了解如何在 Azure 中为 Cloud Volumes ONTAP 创建提供数据的 Storage VM"^]。
+https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-managing-svms-azure.html["了解如何在 Azure 中为 Cloud Volumes ONTAP 创建提供数据的 Storage VM"^]。
 
 
 
@@ -121,7 +121,7 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-sv
 
 连接器3.9.4版提供了一些Cloud Volumes ONTAP 管理增强功能、包括AWS KMS支持增强功能、Google Cloud中的共享VPC支持以及Google Cloud中的减少IP数量。
 
-转至 https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html["《BlueXP发行说明》"^] 有关 3.9.4 版的详细信息。
+转至 https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/whats-new.html["《BlueXP发行说明》"^] 有关 3.9.4 版的详细信息。
 
 
 
@@ -130,7 +130,7 @@ https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-managing-sv
 * 必须从BlueXP完成Cloud Volumes ONTAP 升级。您不应使用 System Manager 或命令行界面升级 Cloud Volumes ONTAP 。这样做可能会影响系统稳定性。
 * 您可以从 9.8 版升级到 Cloud Volumes ONTAP 9.9.0 。BlueXP将提示您将现有Cloud Volumes ONTAP 9.8系统升级到9.9.0版本。
 +
-http://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-updating-ontap-cloud.html["了解在收到BlueXP通知时如何升级"^]。
+http://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-updating-ontap-cloud.html["了解在收到BlueXP通知时如何升级"^]。
 
 * 升级单节点系统会使系统脱机长达 25 分钟，在此期间 I/O 会中断。
 * 升级 HA 对无中断， I/O 不会中断。在此无中断升级过程中，每个节点会同时进行升级，以继续为客户端提供 I/O 。
